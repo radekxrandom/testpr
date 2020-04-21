@@ -2,7 +2,7 @@ import React from "react";
 
 const PaginationNav = props => {
   return (
-    <div class="pagination">
+    <div className="pagination">
       <span>&laquo;</span>
       {props.tiles.map(tile => (
         <span

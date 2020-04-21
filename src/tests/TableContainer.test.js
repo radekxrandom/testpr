@@ -1,6 +1,11 @@
 import React from "react";
-import Enzyme, { shallow } from "enzyme";
+import Enzyme, { shallow, mount, render } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
+import TableContainer from "../containers/TableContainer";
+
+//import child components
+import TableComponent from "../components/TableComponent";
+import PaginationNav from "../components/PaginationNav";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -22,7 +27,7 @@ const mockData = [
     latest: 7060
   },
   {
-    id: 2,
+    id: 3,
     name: "Franecki, Torphy and Lesch",
     city: "Port Halle",
     total: 251365,
@@ -46,3 +51,15 @@ const mockData = [
     latest: 1240
   }
 ];
+
+describe("TblCont", () => {
+  test("renders child comps", async () => {
+    const wrapper = shallow(<TableContainer />);
+    await wrapper.instance().componentDidMount();
+    //wrapper.setState({ apiData: mockData, showedFields: mockData });
+    const instance = wrapper.instance();
+    instance.sortBy("id");
+    expect(wrapper.state("apiData")).toBeTruthy();
+    expect(wrapper.find(TableComponent).length).toEqual(1);
+  });
+});

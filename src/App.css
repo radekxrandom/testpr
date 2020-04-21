@@ -15,7 +15,6 @@ body {
 .tableWrapper {
   width: fit-content;
   margin: auto;
-  margin-top: 2em;
   font-size: 1rem;
   bosx-shadow: 18px -17px 5px -6px rgba(218, 218, 218, 0.75);
 }
@@ -68,6 +67,7 @@ table,
 th,
 td {
   border: solid 0.3px grey;
+  border-top: none !important;
   overflow: auto;
 }
 
@@ -126,6 +126,93 @@ th:hover {
 .pagination span:hover:not(.active) {
   background-color: #ddd;
   cursor: pointer;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.8s infinite ease-in-out;
+}
+
+.loader {
+  color: #cfcfcf;
+  font-size: 30px;
+  margin: 80px auto;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+.loader:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.loader:after {
+  left: 3.5em;
+}
+
+@-webkit-keyframes load7 {
+
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+@keyframes load7 {
+
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+.searchInput {
+  width: 85rem;
+  margin: auto;
+}
+
+input {
+  border: solid 0.3px grey;
+  border-bottom: none;
+  font-family: "Raleway", sans-serif !important;
+  border-radius: 5px 5px 0px 0px;
+  width: -webkit-fill-available;
+  margin: auto;
+  height: 3rem !important;
+  font-size: 2rem;
+  line-height: 4rem;
+  padding-left: 1%;
+  color: #3e3e3e;
 }
 
 @media screen and (max-width: 650px) {
