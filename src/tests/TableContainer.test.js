@@ -5,7 +5,6 @@ import TableContainer from "../containers/TableContainer";
 
 //import child components
 import TableComponent from "../components/TableComponent";
-import PaginationNav from "../components/PaginationNav";
 
 Enzyme.configure({ adapter: new Adapter() });
 
