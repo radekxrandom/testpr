@@ -197,7 +197,6 @@ th:hover {
 }
 
 .searchInput {
-  width: 85rem;
   margin: auto;
 }
 
@@ -217,7 +216,8 @@ input {
 
 @media screen and (max-width: 650px) {
   #root {
-    width: 100vh;
+    width: fit-content;
+    font-size: 2rem;
   }
 
   table {
@@ -235,5 +235,11 @@ input {
   .pagination {
     width: 100vh;
     font-size: 3rem;
+  }
+
+  input {
+    margin-left: 1%;
+    width: 97%;
+    height: 5rem !important;
   }
 }
