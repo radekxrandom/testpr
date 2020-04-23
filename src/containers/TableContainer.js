@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 import UIfx from "uifx";
-import bleepAudio from "./audio/bleep.mp3";
+import bleepAudio from "../audio/bleep.mp3";
 
 import TableComponent from "../components/TableComponent";
 import PaginationNav from "../components/PaginationNav";
 import SearchComponent from "../components/SearchComponent";
 
-const bleep = new UIfx(bleepAudio, { throttleMs: 60 });
+const bleep = new UIfx(bleepAudio, { throttleMs: 60, volume: 0.4 });
 
 /**
  * Container Component.
