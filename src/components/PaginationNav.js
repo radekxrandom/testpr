@@ -9,7 +9,12 @@ import React from "react";
 const PaginationNav = props => {
   return (
     <div className="pagination">
-      <span>&laquo;</span>
+      <span
+        onClick={() => props.clickedTile(props.activeTile - 1)}
+        className={props.activeTile === 0 ? "unClickable" : "clickable"}
+      >
+        &laquo;
+      </span>
       {props.tiles.map(tile => (
         <span
           key={tile.id}
@@ -19,7 +24,9 @@ const PaginationNav = props => {
           {tile.id + 1}
         </span>
       ))}
-      <span>&raquo;</span>
+      <span onClick={() => props.clickedTile(props.activeTile + 1)}>
+        &raquo;
+      </span>
     </div>
   );
 };

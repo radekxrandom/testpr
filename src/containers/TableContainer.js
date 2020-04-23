@@ -67,12 +67,15 @@ class TableContainer extends Component {
    * @public
    */
 
-  cratePaginationTiles = sortedCompanysdata => {
+  cratePaginationTiles = (sortedCompanysdata, activeTile) => {
+    if (activeTile < 0 || activeTile > 20) {
+      return;
+    }
     let tiles = [];
     const numberOfRowsPerPage = 15;
     for (let i = 0; i < sortedCompanysdata.length / numberOfRowsPerPage; i++) {
       let tile = {
-        clName: i === 1 ? "active" : "disabled",
+        active: i === activeTile ? true : false,
         id: i
       };
       tiles.push(tile);
@@ -90,22 +93,17 @@ class TableContainer extends Component {
    */
 
   paginateData = async (id, sorted = true) => {
+    if (id < 0 || id > 20) {
+      return;
+    }
     let displayedCompanies = sorted
       ? this.state.allCompanies.slice(id * 15, id * 15 + 15)
       : this.state.searchedCompanysData.slice(id * 15, id * 15 + 15);
 
     let tiles = sorted
-      ? this.cratePaginationTiles(this.state.allCompanies)
-      : this.cratePaginationTiles(this.state.searchedCompanysData);
-    tiles = tiles.map(tile => {
-      if (tile.id === id) {
-        tile.active = true;
-      }
-      if (tile.id !== id) {
-        tile.active = false;
-      }
-      return tile;
-    });
+      ? this.cratePaginationTiles(this.state.allCompanies, id)
+      : this.cratePaginationTiles(this.state.searchedCompanysData, id);
+
     await this.setState({
       displayedCompanies,
       tiles,
@@ -128,7 +126,6 @@ class TableContainer extends Component {
       var right = [];
       var left = [];
       var pivot = arr.shift();
-
       var length = arr.length;
 
       for (let i = 0; i < length; i++) {
@@ -157,7 +154,7 @@ class TableContainer extends Component {
 
     this.setState({
       allCompanies: sortedCompaniesDataWithIncomes,
-      tiles: this.cratePaginationTiles(sortedCompaniesDataWithIncomes)
+      tiles: this.cratePaginationTiles(sortedCompaniesDataWithIncomes, 0)
     });
     this.paginateData(0);
   };
@@ -259,8 +256,8 @@ class TableContainer extends Component {
               arrow={this.state.arrow}
             />
           </div>
-
           <PaginationNav
+            activeTile={this.state.currentPaginationSection}
             tiles={this.state.tiles}
             clickedTile={this.paginateData}
           />

@@ -17,6 +17,7 @@ body {
   margin: auto;
   font-size: 1rem;
   bosx-shadow: 18px -17px 5px -6px rgba(218, 218, 218, 0.75);
+  box-shadow: -6px -2px 7px -1px rgba(0, 0, 0, 0.23);
 }
 
 table {
@@ -25,7 +26,7 @@ table {
   padding-right: 3rem;
   padding-left: 3rem;
   border-collapse: collapse;
-  box-shadow: -6px -2px 7px -1px rgba(0, 0, 0, 0.23);
+  boxx-shadow: -6px -2px 7px -1px rgba(0, 0, 0, 0.23);
   width: 85rem !important;
 }
 
@@ -96,6 +97,15 @@ th {
 th:hover {
   cursor: pointer;
   background: #cfcfcf !important;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.unClickable:hover {
+  cursor: not-allowed !important;
+  background: inherit !important;
 }
 
 .pagination {
