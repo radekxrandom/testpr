@@ -23,18 +23,23 @@ There are three presentational function components. They all render html with th
 
 Renders input field for the searched phrase.
 Props passed:
-.._ searchData - function that gets called onChange event and performs search
-.._ searchedValue - string, value (typed by the user) by which data is searched
+
+- searchData - function that gets called onChange event and performs search
+- searchedValue - string, value (typed by the user) by which data is searched
 
 ### PaginationNav
 
 Renders tiles that enable users to navigate through the pages of the table.
 Props passed:
-..\* tiles - Array of objects that contains tiles to display. Each tile has and id attribute and active attribute which is a boolean. When tile.active is true the given tile has class 'active' otherwise the class is 'disabled'.
+
+- tiles - Array of objects that contains tiles to display. Each tile has and id attribute and active attribute which is a boolean. When tile.active is true the given tile has class 'active' otherwise the class is 'disabled'.
 
 ### TableComponent
 
 Renders the table with company's data passed as props from parent component.
 Props passed:
-.._ displayedCompanies - Array of objects with the data of companies to display.
-.._ onClickSortByField - Function that gets called when th element (ie column header) is clicked. It passes the column name as an argument and sorts data by given field.
+
+- displayedCompanies - Array of objects with the data of companies to display.
+- onClickSortByField - Function that gets called when th element (ie column header) is clicked. It passes the column name as an argument and sorts data by given field.
+
+For more information refer to the docs folder.
