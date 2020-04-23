@@ -24,7 +24,10 @@ const PaginationNav = props => {
           {tile.id + 1}
         </span>
       ))}
-      <span onClick={() => props.clickedTile(props.activeTile + 1)}>
+      <span
+        onClick={() => props.clickedTile(props.activeTile + 1)}
+        className={props.activeTile === 19 ? "unClickable" : "clickable"}
+      >
         &raquo;
       </span>
     </div>

@@ -98,7 +98,7 @@ class TableContainer extends Component {
 
   paginateData = async (id, sorted = true) => {
     bleep.play();
-    if (id < 0 || id > 20) {
+    if (id < 0 || id > 19) {
       return;
     }
     let displayedCompanies = sorted
