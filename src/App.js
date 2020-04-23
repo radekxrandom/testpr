@@ -1,13 +1,14 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header";
 import TableContainer from "./containers/TableContainer";
 
 const App = () => {
   return (
     <div className="App">
       <div className="wrapper">
-        <Header />
+        <div className="header">
+          <h2>GREATEST TABLE EVER</h2>
+        </div>
         <TableContainer />
       </div>
     </div>
