@@ -243,7 +243,7 @@ input {
 
   .header {
     font-size: 1.5rem !important;
-    overflow-wrap: no;
+    text-align: center;
   }
 
   .pagination {
