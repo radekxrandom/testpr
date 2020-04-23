@@ -1,10 +1,10 @@
 # Recruitment test
 
 Website written in React that fetches and displays table of companies.
-First click on the column header sorts the table ascending by given field, second click sorts in reverse order.
+The first click on the column header sorts the table ascending by given field, and the second one click sorts data in a reversed order.
 Users have the option to search through the data with included search bar.
 
-![sc](https://i.imgur.com/ipAElqu.png)
+![sc](https://i.imgur.com/tLggR0v.png)
 
 # Components
 
@@ -12,7 +12,7 @@ Users have the option to search through the data with included search bar.
 
 ### TableContainer
 
-Container Component which contains the logic for presentational components. Parent component of the components mentioned below. It performs data fetching from the api and sorts it (using quicksort) by id on default.
+Container Component which contains the logic for presentational components. Parent component of the components mentioned below. It performs data fetching (with axios) from the api and sorts it (using quicksort) by id on default.
 On user action it performs sorting data by a given field (either ascending or descending) or searches through it and then passes the result as props to presentational component.
 
 ## Function Components
@@ -32,7 +32,7 @@ Props passed:
 Renders tiles that enable users to navigate through the pages of the table.
 Props passed:
 
-- tiles - Array of objects that contains tiles to display. Each tile has and id attribute and active attribute which is a boolean. When tile.active is true the given tile has class 'active' otherwise the class is 'disabled'.
+- tiles - Array of objects that contains tiles to display. Each tile has an id attribute and active attribute which is a boolean. When tile.active is true the given tile has class 'active' otherwise the class is 'disabled'.
 
 ### TableComponent
 
@@ -42,4 +42,4 @@ Props passed:
 - displayedCompanies - Array of objects with the data of companies to display.
 - onClickSortByField - Function that gets called when th element (ie column header) is clicked. It passes the column name as an argument and sorts data by given field.
 
-For more information refer to the docs folder.
+For more information please refer to the docs folder.
