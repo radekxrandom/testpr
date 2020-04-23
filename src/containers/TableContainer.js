@@ -97,6 +97,7 @@ class TableContainer extends Component {
    */
 
   paginateData = async (id, sorted = true) => {
+    bleep.play();
     if (id < 0 || id > 20) {
       return;
     }
@@ -176,7 +177,6 @@ class TableContainer extends Component {
    */
 
   onClickSortByField = async field => {
-    bleep.play();
     if (this.state.arrow === field) {
       this.setState({
         allCompanies: this.state.allCompanies.reverse(),
